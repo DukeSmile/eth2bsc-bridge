@@ -42,6 +42,15 @@ const config: HardhatUserConfig = {
       gas: 2100000,
       gasPrice: 8000000000,
     },
+    goerli: {
+      url: process.env.GEORLI_URL || "",
+      accounts: [
+        process.env.PRIVATE_KEY || "",
+        process.env.TEST_WALLET_PRIVATE_KEY || "",
+      ],
+      gas: 2100000,
+      gasPrice: 8000000000,
+    },
     ropsten: {
       url: process.env.ROPSTEN_URL || "",
       accounts: [
@@ -72,6 +81,15 @@ const config: HardhatUserConfig = {
       gas: 2100000,
       gasPrice: 8000000000,
     },
+    polygonMumbai: {
+      url: process.env.MUMBAI_URL || "",
+      accounts: [
+        process.env.PRIVATE_KEY || "",
+        process.env.TEST_WALLET_PRIVATE_KEY || "",
+      ],
+      gas: 2100000,
+      gasPrice: 8000000000,
+    },
   },
   mocha: {
     timeout: 100000000,
@@ -85,11 +103,15 @@ const config: HardhatUserConfig = {
       // @ts-ignore
       mainnet: process.env.ETHERSCAN_API_KEY,
       // @ts-ignore
+      goerli: process.env.ETHERSCAN_API_KEY,
+      // @ts-ignore
       bsc: process.env.BSCSCAN_API_KEY,
       // @ts-ignore
       rinkeby: process.env.ETHERSCAN_API_KEY,
       // @ts-ignore
       bscTestnet: process.env.BSCSCAN_API_KEY,
+      // @ts-ignore
+      polygonMumbai: process.env.POLYGONSCAN_API_KEY,
     },
   },
 };
